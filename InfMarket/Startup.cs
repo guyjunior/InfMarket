@@ -26,7 +26,8 @@ namespace InfMarket
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<ApplicationDBContext>(dbContextOption => dbContextOption.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDBContext>(dbContextOption => dbContextOption.UseSqlServer
+            (Configuration.GetConnectionString("MyConStr")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
